@@ -1,22 +1,13 @@
 function generateMarkdown(data) {
-    return `# ${data.title}
-  ## Description
-  ${data.Description}
-  ## Installation
-  ${data.Installation}
-  ## Usage
-  ${data.Usage}
-  ## License
-  ${data.License}
-  ## Contributing
-  ${data.Contributing}
-  ## Tests
-  ${data.Tests}
-  ## Github
-  ${data.Github}
-  ## Email
-  ${data.Email}
-  `;
+  console.log(data)
+// `<li><a href="#">Item ${list.children.length + 1}</a></li>`;
+  
+ return `<svg height="200" width="300">
+    <polygon fill='green' points="250,60 100,400 400,400" />
+    <text text-anchor='middle' x="0" y="15" fill=${data.textColor}>I love SVG!</text> 
+  </svg>`
+
+
   }
   
   module.exports = generateMarkdown;

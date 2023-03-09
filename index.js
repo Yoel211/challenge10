@@ -13,21 +13,36 @@ inquirer
       message: 'Enter text for the logo. (Must not be more than 3 characters).',
     },
     {
-      type: 'input',
-      name: 'Description',
+      type: 'list',
+      name: 'textColor',
       message: 'Enter a text color',
+      choices: [
+        'Red',
+        'Green',
+        'Blue'
+      ],
     },
     {
-      type: 'input',
-      name: 'Installation',
+      type: 'list',
+      name: 'shape',
       message: 'Select a shape for the logo (use arrow keys)',
+      choices: [
+        'circle',
+        'square',
+        'triangle'
+      ],
     },
     {
-      type: 'input',
-      name: 'Usage',
+      type: 'list',
+      name: 'shapeColor',
       message: 'Enter a shape color',
+      choices: [
+        'green',
+        'blue',
+        'yellow'
+      ],
     },
-    
+
   ]).then(function(answers){
     console.log(answers)
     var result = generateMarkdown(answers)
