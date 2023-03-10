@@ -49,4 +49,4 @@ inquirer
       console.log("wrote file")
     })
   })
-  // module.exports = index;
+   module.exports = color;

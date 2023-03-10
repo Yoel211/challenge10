@@ -12,7 +12,7 @@ class shape {
   }
 }
 
-class triangle extends shape {
+class Triangle extends shape {
   constructor (shapeColor, text, textColor) {
     super(shapeColor, text, textColor);
   }
@@ -24,7 +24,7 @@ class triangle extends shape {
   }
 }
 
-class circle extends shape {
+class Circle extends shape {
   constructor (shapeColor, text, textColor){
     super(shapeColor, text, textColor);
   }
@@ -36,7 +36,7 @@ class circle extends shape {
   }
 }
 
-class square extends shape {
+class Square extends shape {
   constructor (shapeColor, text, textColor){
     super(shapeColor, text, textColor);
   }
