@@ -1,7 +1,5 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-// TODO: Create an array of questions for user input
-const generateMarkdown = require('./utils/generateMarkdown')
+const shape = require('./utils/shape')
 const fs = require('fs');
 
 
@@ -45,7 +43,7 @@ inquirer
 
   ]).then(function(answers){
     console.log(answers)
-    var result = generateMarkdown(answers)
+    var result = shape(answers)
     fs.writeFile("shape.svg", result, function(err){
       if (err) throw err
       console.log("wrote file")
@@ -53,44 +51,3 @@ inquirer
   })
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
