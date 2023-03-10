@@ -43,11 +43,9 @@ inquirer
 
   ]).then(function(answers){
     console.log(answers)
-    var result = shape(answers)
+    var result = new shape(answers)
     fs.writeFile("shape.svg", result, function(err){
       if (err) throw err
       console.log("wrote file")
     })
   })
-  
-
