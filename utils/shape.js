@@ -26,7 +26,7 @@ class Circle {
   }
 
   render() {
-    return `<circle fill="${this.shapeColor}" cx="51" cy="51" r="50"/>`;
+    return `<circle fill="${this.shapeColor}" cx="150" cy="100" r="80"/>`;
   }
 }
 
@@ -42,7 +42,7 @@ class Square {
   }
 
   render() {
-    return `<rect fill="${this.shapeColor}" x="100" y="150" rx="0" ry="0" width="400" height="300" stroke-width="1"/>`;
+    return `<rect fill="${this.shapeColor}" x="90" y="40"  width="120" height="120" stroke-width="1"/>`;
   }
 }
 

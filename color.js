@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
-const shape = require('./utils/shape')
+const {Triangle, Square, Circle} = require('./utils/shape')
 const fs = require('fs');
 
-
+function init() {
 inquirer 
   .prompt([
     {
@@ -43,10 +43,47 @@ inquirer
 
   ]).then(function(answers){
     console.log(answers)
-    var result = shape(answers)
-    fs.writeFile("shape.svg", result, function(err){
-      if (err) throw err
-      console.log("wrote file")
-    })
+    if (
+      answers.shape === 'circle'
+    )
+    {
+      var shape = new Circle(answers.shapeColor, answers.textColor)
+      var results = svgTemplate(shape, answers.textColor ,answers.title)
+      renderSvg(results);
+    }
+    else if (
+      answers.shape === 'square'
+    )
+    {
+      var shape = new Square(answers.shapeColor, answers.textColor)
+      var results = svgTemplate(shape, answers.textColor ,answers.title)
+      renderSvg(results);
+    }
+    else if (
+      answers.shape === 'triangle'
+    )
+    {
+      var shape = new Triangle(answers.shapeColor, answers.textColor)
+      var results = svgTemplate(shape, answers.textColor ,answers.title)     
+      renderSvg(results);
+    }
+
+   
   })
-   module.exports = shape;
+} 
+init()
+
+function svgTemplate(shape,color, title) {
+  return `
+  <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  ${shape.render()}
+  <text x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${title}</text>
+  </svg>`
+}
+
+function renderSvg(results) {
+  fs.writeFile('logo.svg', results, function(err) {
+    if (err) throw err;
+    console.log('Saved!');
+  })
+}
