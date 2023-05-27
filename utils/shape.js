@@ -1,55 +1,57 @@
-class shape {
-  constructor (shapeColor, text, textColor){
-    this.text = text;
-    this.textColor = textColor;
+class Triangle {
+  constructor(shapeColor, textColor, borderColor) {
     this.shapeColor = shapeColor;
+    this.textColor = textColor;
+    this.borderColor = borderColor;
   }
-  setColor(str) {
-    this.shapeColor = str;
+
+  setColor(color) {
+    this.shapeColor = color;
   }
-  setText(str) {
-    this.textColor = str;
+
+  render() {
+    return `<polygon fill="${this.shapeColor}" points="150, 18 244, 182 56, 182"/>`;
   }
 }
 
-class Triangle extends shape {
-  constructor (shapeColor, text, textColor) {
-    super(shapeColor, text, textColor);
+class Circle {
+  constructor(shapeColor, textColor, borderColor) {
+    this.shapeColor = shapeColor;
+    this.textColor = textColor;
+    this.borderColor = borderColor;
   }
-  render(){
-    return `<polygon fill=${this.shapeColor} points="150, 18 244, 182 56, 182"/>`;
+
+  setColor(color) {
+    this.shapeColor = color;
   }
-  textRender(){
-    return `<text font-weight="bold" text-anchor='middle' fill=${this.textColor}>${this.title}</text>`;
+
+  render() {
+    return `<circle fill="${this.shapeColor}" cx="51" cy="51" r="50"/>`;
   }
 }
 
-class Circle extends shape {
-  constructor (shapeColor, text, textColor){
-    super(shapeColor, text, textColor);
+class Square {
+  constructor(shapeColor, textColor, borderColor) {
+    this.shapeColor = shapeColor;
+    this.textColor = textColor;
+    this.borderColor = borderColor;
   }
-  render(){
-    return `<circle fill=${this.shapeColor} cx="51" cy="51" r="50"/>`;
+
+  setColor(color) {
+    this.shapeColor = color;
   }
-  textRender(){
-    return `<text font-weight='bold' text-anchor='middle' fill=${this.textColor}>${this.title}</text>`;
+
+  render() {
+    return `<rect fill="${this.shapeColor}" x="100" y="150" rx="0" ry="0" width="400" height="300" stroke-width="1"/>`;
   }
 }
 
-class Square extends shape {
-  constructor (shapeColor, text, textColor){
-    super(shapeColor, text, textColor);
-  }
-  render(){
-    return `<rect fill=${this.shapeColor} x="100" y="150" rx="0" ry="0" width="400" height="300" stroke-width="1"/>`;
-  }
-  textRender(){
-    return `<text font-weight='bold' text-anchor='middle' fill=${this.textColor}>${this.title}</text>`;
-  }
-}
+module.exports = {
+  Triangle,
+  Circle,
+  Square,
+};
 
-
-module.exports = shape;
 
 
 
